@@ -346,6 +346,124 @@
   }
   .error-box.show { display: block; }
 
+  /* ---------- Content sections (How it works / Use cases / FAQ) ---------- */
+  .content-section {
+    padding: 64px 0 8px;
+    border-top: 1px solid #1a1f21;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 32px);
+    text-align: center;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+  .section-sub {
+    text-align: center;
+    color: var(--text-muted);
+    margin: 0 0 36px;
+    font-size: 15px;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 36px;
+  }
+  .step-card {
+    background: var(--surface);
+    border: 1px solid #1f2426;
+    border-radius: var(--radius);
+    padding: 26px 22px;
+  }
+  .step-num {
+    font-family: var(--font-mono);
+    color: var(--green);
+    font-size: 13px;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+  .step-card h3 {
+    font-family: var(--font-display);
+    font-size: 17px;
+    margin: 0 0 8px;
+  }
+  .step-card p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .usecase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+  .usecase-card {
+    background: var(--surface);
+    border: 1px solid #1f2426;
+    border-left: 3px solid var(--magenta);
+    border-radius: 10px;
+    padding: 20px 22px;
+  }
+  .usecase-card h3 {
+    font-family: var(--font-display);
+    font-size: 16px;
+    margin: 0 0 8px;
+  }
+  .usecase-card p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .faq-list {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid #1f2426;
+    border-radius: 10px;
+    padding: 16px 20px;
+  }
+  .faq-item summary {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+";
+    color: var(--green);
+    font-size: 20px;
+    margin-left: 12px;
+    flex-shrink: 0;
+  }
+  .faq-item[open] summary::after { content: "−"; }
+  .faq-item p {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 12px 0 2px;
+  }
+
+  @media (max-width: 760px) {
+    .steps-grid { grid-template-columns: 1fr; }
+    .usecase-grid { grid-template-columns: 1fr; }
+  }
+
   /* ---------- Footer ---------- */
   footer {
     margin-top: 70px;
@@ -419,7 +537,149 @@
     </div>
   </section>
 
+  <!-- ---------- How it works ---------- -->
+  <section class="content-section" id="how-it-works">
+    <h2 class="section-title">How it works</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <h3>Upload your image</h3>
+        <p>Drag and drop a JPG, PNG, or WEBP photo, or click to browse from your device.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <h3>AI removes the background</h3>
+        <p>An on-device AI model detects the subject and cuts out the background — no data ever leaves your browser.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <h3>Download your cutout</h3>
+        <p>Get a transparent PNG instantly, ready to use in designs, listings, or social posts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- Use cases ---------- -->
+  <section class="content-section" id="use-cases">
+    <h2 class="section-title">Who uses a background remover</h2>
+    <p class="section-sub">One tool, a lot of everyday jobs:</p>
+    <div class="usecase-grid">
+      <div class="usecase-card">
+        <h3>E-commerce sellers</h3>
+        <p>Turn phone photos into clean, white-background product images for Amazon, Etsy, Shopify, or Instagram shops.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>Social media & content creators</h3>
+        <p>Cut yourself or an object out of a photo to drop into thumbnails, memes, or graphic templates.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>Students & professionals</h3>
+        <p>Prepare ID photos, resume headshots, or clean images for presentations and reports.</p>
+      </div>
+      <div class="usecase-card">
+        <h3>Designers & marketers</h3>
+        <p>Quickly isolate assets for banners, ads, and mockups without opening Photoshop.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ---------- FAQ ---------- -->
+  <section class="content-section" id="faq">
+    <h2 class="section-title">Frequently asked questions</h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Is BG Remove Now really free?</summary>
+        <p>Yes. There's no signup, no watermark, and no limit on how many images you process — it's completely free to use.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is my photo uploaded to a server?</summary>
+        <p>No. Background removal runs entirely on-device, inside your own browser. Your image is never sent anywhere, which also makes it fast and private.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What image formats are supported?</summary>
+        <p>You can upload JPG, PNG, or WEBP images. The result is always downloaded as a transparent PNG.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Does it work on mobile phones?</summary>
+        <p>Yes, BG Remove Now works in any modern mobile browser — no app install needed.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Why does the first image take longer to process?</summary>
+        <p>The first time you use it, your browser downloads a small AI model (around 30-40MB) so it can process images locally. After that, it's cached and later images process much faster.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I use the cutout images commercially?</summary>
+        <p>Yes — the resulting image is yours to use however you like, including for products, ads, or client work.</p>
+      </details>
+    </div>
+  </section>
+
 </div>
+
+<!-- Structured data for search engines: WebApplication + FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://bgremovenow.vercel.app/#app",
+      "name": "BG Remove Now",
+      "url": "https://bgremovenow.vercel.app/",
+      "description": "Free background removal tool that runs entirely in your browser. Upload a photo and get a transparent PNG cutout instantly — no signup, no server upload.",
+      "applicationCategory": "PhotoEditingApplication",
+      "operatingSystem": "Any (runs in any modern web browser)",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "BG Remove Now",
+      "url": "https://bgremovenow.vercel.app/",
+      "logo": "https://bgremovenow.vercel.app/favicon.svg",
+      "email": "bgremovenow@gmail.com"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is BG Remove Now really free?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. There's no signup, no watermark, and no limit on how many images you process — it's completely free to use." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my photo uploaded to a server?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. Background removal runs entirely on-device, inside your own browser. Your image is never sent anywhere, which also makes it fast and private." }
+    },
+    {
+      "@type": "Question",
+      "name": "What image formats are supported?",
+      "acceptedAnswer": { "@type": "Answer", "text": "You can upload JPG, PNG, or WEBP images. The result is always downloaded as a transparent PNG." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on mobile phones?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, BG Remove Now works in any modern mobile browser — no app install needed." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the first image take longer to process?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The first time you use it, your browser downloads a small AI model (around 30-40MB) so it can process images locally. After that, it's cached and later images process much faster." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use the cutout images commercially?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — the resulting image is yours to use however you like, including for products, ads, or client work." }
+    }
+      ]
+    }
+  ]
+}
+</script>
 
 <footer>
   <div class="footer-links">
