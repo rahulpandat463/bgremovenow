@@ -20,6 +20,28 @@
 <!-- Favicon (inline SVG, no extra file needed) -->
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230a0c0d'/%3E%3Ccircle cx='50' cy='50' r='28' fill='%2339ff88'/%3E%3C/svg%3E">
 
+<!--
+  ============================================================
+  DEPLOYMENT NOTES (read before going live)
+  ============================================================
+  1. HOSTING: Upload this whole folder to Netlify / Vercel / Cloudflare
+     Pages (all free, drag-and-drop deploy, no domain needed to start).
+
+  2. DOMAIN: Replace "https://bgremovenow.vercel.app/" above (canonical +
+     og:url) with your real live URL once you have one.
+
+  3. GOOGLE ANALYTICS: In the CONFIG script below, set ga4MeasurementId
+     to your real GA4 Measurement ID to start tracking visits.
+
+  4. PRIVACY: All image processing happens 100% in the visitor's
+     browser. No image is ever uploaded to any server — this is
+     already stated on the included Privacy Policy page.
+
+  5. ADS: No ad slots are included right now. Once your AdSense
+     account is approved, ask to have ad slots added back in —
+     it takes just a few minutes to wire them into this page.
+  ============================================================
+-->
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -500,7 +522,7 @@
       downloadBtn.onclick = () => {
         const a = document.createElement('a');
         a.href = currentBlobUrl;
-        a.download = 'bg-remove-now.png';
+        a.download = 'bg-cutout.png';
         document.body.appendChild(a);
         a.click();
         a.remove();
