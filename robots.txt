@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Replace with your real domain once live
-Sitemap: https://your-domain-here.com/sitemap.xml
+Sitemap: https://bgremovenow.vercel.app/sitemap.xml
